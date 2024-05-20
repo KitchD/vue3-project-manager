@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@views/": ["./src/views/*"],
+      "@assets/": ["./src/assets/*"]
+    },
+    "checkJs": false // 启用javascript文件的类型检查
+  },
+  "exclude": ["node_modules", "dist"]
+}
