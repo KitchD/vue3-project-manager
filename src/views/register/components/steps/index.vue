@@ -1,11 +1,19 @@
 <template>
   <div class="stepx-box">
     <div
-      class="setpx-item flex align-center"
-      v-for="item in setpsArr"
+      v-for="(item, index) in setpsArr"
       :key="item"
+      :class="[
+        'setpx-item',
+        'flex',
+        'align-center',
+        CurrStep == index + 1 ? 'act' : '',
+        CurrStep > index + 1 ? 'done' : '',
+      ]"
     >
-      <div class="dot"></div>
+      <div class="dot">
+        <span v-show="CurrStep > index + 1" class="duihao"></span>
+      </div>
       <span>{{ item }}</span>
     </div>
   </div>
@@ -13,6 +21,7 @@
 
 <script setup>
 const props = defineProps(["setpsArr"]);
+const { CurrStep } = toRefs(inject("RegisterObject"));
 </script>
 
 <style lang="scss" scoped>
@@ -21,7 +30,7 @@ const props = defineProps(["setpsArr"]);
 }
 .setpx-item {
   margin-bottom: 32px;
-  color: #fff;
+  color: #98c2ff;
   font-size: 18px;
   .dot {
     position: relative;
@@ -43,6 +52,25 @@ const props = defineProps(["setpsArr"]);
       border-radius: 1px;
       background-color: #9fc6ff;
     }
+  }
+}
+
+.act {
+  .dot {
+    border-color: #fff;
+
+    &::before {
+      background-color: #fff;
+    }
+  }
+  span {
+    color: #fff;
+  }
+}
+
+.done  {
+  .dot {
+    background-color: #fff;
   }
 }
 

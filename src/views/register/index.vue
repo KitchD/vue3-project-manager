@@ -2,7 +2,14 @@
   <div class="root-page flex">
     <Menu></Menu>
     <div class="content">
-      <span class="steps-title">步骤1/4</span>
+      <el-scrollbar height="calc(100% - 84px)">
+        <span class="steps-title">步骤{{ RegisterObject.CurrStep }}/4</span>
+
+        <PhoneForm v-show="RegisterObject.CurrStep === 1"></PhoneForm>
+        <InfoForm v-show="RegisterObject.CurrStep === 2"></InfoForm>
+        <CompanyForm v-show="RegisterObject.CurrStep === 3"></CompanyForm>
+        <TeamForm v-show="RegisterObject.CurrStep === 4"></TeamForm>
+      </el-scrollbar>
 
       <BottomBtn></BottomBtn>
     </div>
@@ -12,6 +19,16 @@
 <script setup>
 import Menu from "./components/menu.vue/index.vue";
 import BottomBtn from "./components/bottom-btn/index.vue";
+import PhoneForm from "./components/phone-form/index.vue";
+import InfoForm from "./components/info-form/index.vue";
+import CompanyForm from "./components/company-form/index.vue";
+import TeamForm from "./components/team-form/index.vue";
+
+const RegisterObject = reactive({
+  CurrStep: 1, //当前步骤
+});
+
+provide("RegisterObject", RegisterObject);
 </script>
 
 <style lang="scss" scoped>
@@ -25,7 +42,6 @@ import BottomBtn from "./components/bottom-btn/index.vue";
   padding-top: 109px;
   margin-left: 20px;
   height: 100%;
-  background-color: red;
   text-align: center;
   .steps-title {
     /** 文本1 */
