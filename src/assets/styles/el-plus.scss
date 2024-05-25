@@ -22,3 +22,19 @@
     background-color: transparent !important;
   }
 }
+
+.form-input {
+  height: 50px;
+  border-radius: 14px !important;
+
+  .el-input__wrapper {
+    border-radius: 14px;
+  }
+}
+
+.form-select {
+  .el-select__wrapper {
+    height: 50px;
+    border-radius: 14px !important;
+  }
+}

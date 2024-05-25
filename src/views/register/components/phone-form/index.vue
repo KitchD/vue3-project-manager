@@ -6,14 +6,14 @@
         <div class="flex phone-box">
           <el-select
             v-model="form.AreaCode"
-            class="area-code-select"
+            class="area-code-select form-select"
             placeholder=""
           >
             <el-option label="+86" value="86" />
             <el-option label="+1" value="1" />
             <el-option label="+47" value="47" />
           </el-select>
-          <el-input v-model="form.name" class="phone-input">
+          <el-input v-model="form.name" class="form-input flex1">
             <template #suffix>
               <el-link type="primary">获取验证码</el-link>
             </template>
@@ -23,13 +23,12 @@
       <captcha v-model="form.captcha" :number="4"></captcha>
 
       <el-form-item label="手机号码">
-        <el-input v-model="form.email" class="phone-input" />
+        <el-input v-model="form.email" class="form-input" />
       </el-form-item>
 
       <el-form-item label="密码">
-        <el-input v-model="form.email" class="phone-input" />
+        <el-input v-model="form.email" class="form-input" />
       </el-form-item>
-      {{ form.captcha }}
     </el-form>
   </div>
 </template>
@@ -54,29 +53,13 @@ const form = reactive({
   color: rgba(10, 22, 41, 1);
 }
 
-::v-deep(.el-input) {
-  height: 50px;
-  border-radius: 14px !important;
-
-  .el-input__wrapper {
-    border-radius: 14px;
-  }
-}
-::v-deep(.el-select__wrapper) {
-  height: 50px;
-  border-radius: 14px !important;
-}
-
 .phone-box {
   width: 100%;
-  .phone-input {
-    flex: 1;
-  }
+
   .area-code-select {
     width: 74px;
     margin-right: 16px;
-    ::v-deep(.el-select__wrapper) {
-    }
+  
   }
 }
 </style>

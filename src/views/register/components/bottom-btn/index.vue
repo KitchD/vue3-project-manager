@@ -14,9 +14,14 @@
 
 <script setup>
 const RegisterObject = inject("RegisterObject");
+const router = useRouter();
 
 function next() {
-  if (RegisterObject.CurrStep < 4) RegisterObject.CurrStep += 1;
+  if (RegisterObject.CurrStep < 4) {
+    RegisterObject.CurrStep += 1;
+  } else {
+    router.replace({ path: "/register/success" });
+  }
 }
 
 function pre() {

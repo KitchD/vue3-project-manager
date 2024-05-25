@@ -106,3 +106,10 @@ div:focus {
     transform: translate(-50%, -50%) rotate(45deg);
   }
 }
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

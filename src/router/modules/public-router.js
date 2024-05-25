@@ -11,5 +11,11 @@ const router = [
     component: () => import("@views/register/index.vue"),
     meta: { routerAni: "slide" },
   },
+  {
+    path: "/register/success",
+    name: "register-success",
+    component: () => import("@views/register/success.vue"),
+    meta: { routerAni: "slide" },
+  },
 ];
 export default router;
