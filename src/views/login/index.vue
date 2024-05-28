@@ -1,7 +1,7 @@
 <template>
   <div class="root-page flex">
     <div class="left">
-      <el-scrollbar class="hide-scrollbar">
+      <el-scrollbar class="hide-scrollbar" view-style="width:500px;">
         <div class="text">这里是文字示例，最多显示两行折行</div>
         <img src="~@assets/image/login/left.png" />
       </el-scrollbar>
@@ -85,8 +85,9 @@ const form = reactive({
   }
 
   img {
-    margin-top: 148px;
-    width: 100%;
+    margin: 148px auto 0;
+    // margin-top: 148px;
+    width: 500px;
   }
 }
 

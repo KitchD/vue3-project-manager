@@ -1,17 +1,19 @@
 <template>
   <div class="menu-box">
-    <img class="avatar" src="@/assets/image/avatar.jpg" />
-
-    <ul class="menu-list">
-      <li
-        v-for="item in MenuList"
-        :key="item.name"
-        :class="['item', 'flex', 'align-center']"
-      >
-        <img :src="getImageUrl(item.icon)" />
-        <span class="name">{{ item.name }}</span>
-      </li>
-    </ul>
+    <el-scrollbar>
+      <img class="avatar" src="@/assets/image/avatar.jpg" />
+      <ul class="menu-list">
+        <li
+          v-for="item in MenuList"
+          :key="item.name"
+          :class="['item', 'flex', 'align-center']"
+          @click="ClickItem(item.name)"
+        >
+          <img :src="getImageUrl(GetICon(item))" />
+          <span class="name">{{ item.name }}</span>
+        </li>
+      </ul>
+    </el-scrollbar>
   </div>
 </template>
 
@@ -25,9 +27,22 @@ const MenuList = [
   { icon: "message", name: "消息" },
   { icon: "folder", name: "门户网站" },
 ];
-function getImageUrl(name) {
-  console.log("name: ",name);
-  return new URL(`../../../../assets/image/layout/menu/${name}.svg`, import.meta.url).href;
+
+const CurrentMenu = ref("仪表盘");
+
+const GetICon = computed(
+  () => (item) =>
+    CurrentMenu.value === item.name ? item.icon + "-act" : item.icon
+);
+function getImageUrl(item) {
+  return new URL(
+    `../../../../assets/image/layout/menu/${item}.svg`,
+    import.meta.url
+  ).href;
+}
+
+function ClickItem(name) {
+  CurrentMenu.value = name;
 }
 </script>
 
