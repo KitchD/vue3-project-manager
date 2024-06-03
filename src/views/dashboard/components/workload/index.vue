@@ -16,7 +16,8 @@
         <span class="name">{{ item.name }}</span>
         <br />
         <span class="desc">{{ item.desc }}</span>
-        <span class></span>
+        <br />
+        <span class="level">{{ item.level }}</span>
       </div>
     </div>
   </div>
@@ -31,50 +32,57 @@ const StaffList = [
     desc: "用户界面/交互设计师",
     avatar: "avatar1.svg",
     percentage: Math.floor(Math.random() * 100) + 1,
+    level: "中级",
   },
   {
     name: "王怡悦",
     desc: "用户界面/交互设计师",
-    avatar: "avatar1.svg",
+    avatar: "avatar2.svg",
     percentage: Math.floor(Math.random() * 100) + 1,
+    level: "初级",
   },
   {
     name: "李鹤轩",
-    desc: "用户界面/交互设计师",
-    avatar: "avatar1.svg",
+    desc: "文案",
+    avatar: "avatar3.svg",
     percentage: Math.floor(Math.random() * 100) + 1,
+    level: "中级",
   },
   {
     name: "甄博超",
-    desc: "用户界面/交互设计师",
-    avatar: "avatar1.svg",
+    desc: "文案",
+    avatar: "avatar4.svg",
     percentage: Math.floor(Math.random() * 100) + 1,
+    level: "高级",
   },
   {
-    name: "甄博超",
-    desc: "用户界面/交互设计师",
-    avatar: "avatar1.svg",
+    name: "于伟旗",
+    desc: "IOS开发人员",
+    avatar: "avatar5.svg",
     percentage: Math.floor(Math.random() * 100) + 1,
+    level: "高级",
   },
   {
-    name: "甄博超",
-    desc: "用户界面/交互设计师",
-    avatar: "avatar1.svg",
+    name: "段欣怡",
+    desc: "用户界面/UI设计师",
+    avatar: "avatar6.svg",
     percentage: Math.floor(Math.random() * 100) + 1,
+    level: "中级",
   },
   {
-    name: "甄博超",
-    desc: "用户界面/交互设计师",
-    avatar: "avatar1.svg",
+    name: "于瑞元",
+    desc: "文案",
+    avatar: "avatar7.svg",
     percentage: Math.floor(Math.random() * 100) + 1,
+    level: "初级",
   },
   {
-    name: "甄博超",
-    desc: "用户界面/交互设计师",
-    avatar: "avatar1.svg",
+    name: "段康宇",
+    desc: "用户界面/UI设计师",
+    avatar: "avatar8.svg",
     percentage: Math.floor(Math.random() * 100) + 1,
+    level: "中级",
   },
-  
 ];
 </script>
 
@@ -92,12 +100,12 @@ const StaffList = [
   justify-content: space-between;
   margin-top: 20px;
   grid-template-columns: repeat(auto-fill, 175px);
- 
-  grid-row-gap:16px;
+
+  grid-row-gap: 16px;
   .item {
     position: relative;
     padding-top: 17px;
-    
+
     width: 175px;
     background-color: rgba(244, 249, 253, 1);
     aspect-ratio: 35/36;
@@ -136,6 +144,17 @@ const StaffList = [
       margin-top: 4px;
       color: rgba(10, 22, 41, 1);
       font-size: 14px;
+    }
+    .level {
+      margin-top: 10px;
+      width: 46px;
+      height: 18px;
+      line-height: 18px;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(125, 133, 146, 1);
+      border-radius: 4px;
+      border: 1px solid rgba(125, 133, 146, 1);
     }
   }
 }
