@@ -8,6 +8,13 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import IconsResolver from "unplugin-icons/resolver";
 import Icons from "unplugin-icons/vite";
 import Inspect from "vite-plugin-inspect";
+import pxtovw from "postcss-px-to-viewport";
+
+const loder_pxtovw = pxtovw({
+  //这里是设计稿宽度 自己修改
+  viewportWidth: 1440,
+  viewportUnit: "vw",
+});
 
 export default defineConfig({
   server: {
@@ -44,6 +51,11 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
       "@assets": fileURLToPath(new URL("./src/assets", import.meta.url)),
       "@views": fileURLToPath(new URL("./src/views", import.meta.url)),
+    },
+  },
+  css: {
+    postcss: {
+     // plugins: [loder_pxtovw],
     },
   },
 });

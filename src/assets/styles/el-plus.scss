@@ -47,3 +47,10 @@
     border-radius: 14px !important;
   }
 }
+
+.reverse-progress {
+  transform: rotateY(180deg);
+  .el-progress__text {
+    transform: translateY(-50%) rotateY(180deg) !important;
+  }
+}

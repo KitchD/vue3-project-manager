@@ -8,10 +8,15 @@ import ElementPlus from "element-plus";
 
 import App from "./App.vue";
 import router from "./router";
-
 import directive from "@/directive/index.js";
 
+/* 自定义全局组件 */
+import RootTitle from "@/components/root-title/index.vue";
+/* 自定义全局组件 */
+
 const app = createApp(App);
+
+app.component("RootTitle", RootTitle);
 
 app.use(createPinia());
 app.use(router);

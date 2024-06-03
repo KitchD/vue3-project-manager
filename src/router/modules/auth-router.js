@@ -3,9 +3,20 @@ const router = [
   {
     path: "",
     name: "Layout",
-    component: Layout,
+    redirect:"/dashboard"
   },
-  {},
+  {
+    path: "/dashboard",
+    name: "dashboard",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        name: "dashboard-home",
+        component: () => import("@views/dashboard/index.vue"),
+      },
+    ],
+  },
 ];
 
 export default router;
