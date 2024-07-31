@@ -7,7 +7,7 @@
           v-for="item in MenuList"
           :key="item.name"
           :class="['item', 'flex', 'align-center']"
-          @click="ClickItem(item.name)"
+          @click="ClickItem(item.name, item.url)"
         >
           <img :src="getImageUrl(GetICon(item))" />
           <span class="name">{{ item.name }}</span>
@@ -18,9 +18,10 @@
 </template>
 
 <script setup>
+const router = useRouter();
 const MenuList = [
-  { icon: "dashboard", name: "仪表盘" },
-  { icon: "projects", name: "项目" },
+  { icon: "dashboard", name: "仪表盘", url: "/dashboard" },
+  { icon: "projects", name: "项目", url: "/projects" },
   { icon: "calendar", name: "日历" },
   { icon: "vacations", name: "假期" },
   { icon: "users", name: "雇员" },
@@ -41,8 +42,10 @@ function getImageUrl(item) {
   ).href;
 }
 
-function ClickItem(name) {
+function ClickItem(name, url) {
   CurrentMenu.value = name;
+
+  router.replace(url);
 }
 </script>
 

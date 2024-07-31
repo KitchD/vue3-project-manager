@@ -55,7 +55,7 @@ export default defineConfig({
   },
   css: {
     postcss: {
-     // plugins: [loder_pxtovw],
+      // plugins: [loder_pxtovw],
     },
   },
 });

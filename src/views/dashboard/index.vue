@@ -4,6 +4,7 @@
     <div class="content-box flex">
       <div class="left">
         <WorkLoad></WorkLoad>
+        <project></project>
       </div>
       <div class="right"></div>
     </div>
@@ -13,6 +14,7 @@
 <script setup>
 import Head from "./components/head/index.vue";
 import WorkLoad from "./components/workload/index.vue";
+import project from "./components/project/index.vue";
 </script>
 
 <style lang="scss" scoped>

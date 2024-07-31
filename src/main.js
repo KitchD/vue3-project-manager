@@ -3,6 +3,8 @@ import { createPinia } from "pinia";
 
 import "element-plus/dist/index.css";
 import "@assets/styles/base.scss";
+import "@assets/styles/animate.scss";
+
 import zhCn from "element-plus/es/locale/lang/zh-cn";
 import ElementPlus from "element-plus";
 

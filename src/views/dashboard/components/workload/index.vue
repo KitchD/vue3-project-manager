@@ -2,7 +2,7 @@
   <div class="workload-box">
     <ContentHead text="工作量"></ContentHead>
     <div class="staff-list">
-      <div class="item" v-for="item in StaffList" :key="item.name">
+      <div class="item" v-hover-blur v-for="item in StaffList" :key="item.name">
         <div class="progress-box">
           <el-progress
             type="circle"
@@ -104,6 +104,7 @@ const StaffList = [
   grid-row-gap: 16px;
   .item {
     position: relative;
+    overflow: hidden;
     padding-top: 17px;
 
     width: 175px;
@@ -129,6 +130,10 @@ const StaffList = [
           width: 100% !important;
           height: auto !important;
           aspect-ratio: 1 !important;
+
+          .el-progress-circle__track {
+            stroke: #dce2e7;
+          }
         }
       }
     }
@@ -157,5 +162,13 @@ const StaffList = [
       border: 1px solid rgba(125, 133, 146, 1);
     }
   }
+}
+
+.percentage,
+.name,
+.desc,
+.level {
+  position: relative;
+  z-index: 100;
 }
 </style>

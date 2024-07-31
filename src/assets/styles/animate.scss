@@ -1,0 +1,14 @@
+.hover-blur-span {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  backdrop-filter: blur(6px);
+  /* 鼠标居中 */
+  transform: translate(-50%, -50%);
+  /* 圆的形式展开 */
+  border-radius: 50%;
+}

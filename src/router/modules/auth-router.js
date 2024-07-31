@@ -3,7 +3,7 @@ const router = [
   {
     path: "",
     name: "Layout",
-    redirect:"/dashboard"
+    redirect: "/dashboard",
   },
   {
     path: "/dashboard",
@@ -14,6 +14,18 @@ const router = [
         path: "",
         name: "dashboard-home",
         component: () => import("@views/dashboard/index.vue"),
+      },
+    ],
+  },
+  {
+    path: "/projects",
+    name: "projects",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        name: "project-home",
+        component: () => import("@views/projects/index.vue"),
       },
     ],
   },

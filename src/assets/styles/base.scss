@@ -27,6 +27,13 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "ShangShouGuHuangTi";
+  src: url("../fonts/ShangShouGuHuangTi-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 a:focus,
 a:active {
   outline: none;
